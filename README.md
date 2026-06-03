@@ -38,18 +38,24 @@ A feature-rich Telegram group game bot with XP system, levels, trivia, duels, sh
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/nullbit26/tg-game-bot.git
+git clone https://github.com/yourusername/tg-game-bot.git
 cd tg-game-bot
 npm install
 ```
 
 ### 2. Configure
-Create a `.env` file:
-```env
-BOT_TOKEN=your_token_from_@BotFather
-ADMIN_IDS=your_telegram_id
+1. Copy `config.json.example` to `config.json` (just rename the file)
+2. Open `config.json` in Notepad and fill in your values:
+```json
+{
+  "BOT_TOKEN": "your_bot_token_here",
+  "ADMIN_IDS": "your_telegram_id_here"
+}
 ```
-Get your Telegram ID from [@userinfobot](https://t.me/userinfobot).
+
+**How to get these values:**
+- **BOT_TOKEN**: Message @BotFather in Telegram, create new bot, copy token
+- **ADMIN_IDS**: Message @userinfobot, copy your ID number
 
 ### 3. Run
 ```bash
@@ -71,7 +77,7 @@ tg-game-bot/
 ├── bot.js          # Commands, handlers, game logic
 ├── database.js     # SQLite wrapper, all DB functions
 ├── gamebot.db      # Auto-created SQLite database
-├── .env            # Secrets (not committed)
+├── config.json     # Secrets (not committed, create from example)
 ├── .gitignore
 └── package.json
 ```
@@ -81,9 +87,8 @@ tg-game-bot/
 ## ⚙️ Tech Stack
 - **Node.js**
 - **Telegraf v4** — Telegram Bot framework
-- **sql.js** — SQLite in Node.js (no native deps)
+- **sql.js** — SQLite in Node.js (no native deps, no compilation)
 - **node-cron** — scheduled tasks
-- **dotenv** — environment config
 
 ---
 

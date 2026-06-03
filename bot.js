@@ -1,13 +1,16 @@
-require('dotenv').config();
+const fs = require('fs');
 const { Telegraf, Markup } = require('telegraf');
 const dbModule = require('./database');
 
-if (!process.env.BOT_TOKEN) {
-  console.error('❌ BOT_TOKEN не найден в .env файле!');
+// Load config
+const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+
+if (!config.BOT_TOKEN) {
+  console.error('❌ BOT_TOKEN не найден в config.json!');
   process.exit(1);
 }
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(config.BOT_TOKEN);
 
 const activeTrivias  = new Map();
 const activeDuels    = new Map();
@@ -58,7 +61,7 @@ function ensureUser(ctx) {
   return db.getUser(u.id);
 }
 
-const ADMIN_IDS = (process.env.ADMIN_IDS || '').split(',').map(s => parseInt(s.trim())).filter(Boolean);
+const ADMIN_IDS = (config.ADMIN_IDS || '').split(',').map(s => parseInt(s.trim())).filter(Boolean);
 const isAdmin = id => ADMIN_IDS.includes(id);
 const pendingQuestions = new Map();
 
