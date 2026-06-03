@@ -47,7 +47,7 @@ Perfect for:
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/yourusername/tg-game-bot.git
+git clone https://github.com/nullbit26/tg-game-bot.git
 cd tg-game-bot
 npm install
 ```
