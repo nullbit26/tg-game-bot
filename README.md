@@ -6,6 +6,15 @@ A feature-rich Telegram group game bot with XP system, levels, trivia, duels, sh
 
 ---
 
+## 🎯 Use Cases
+
+Perfect for:
+- 👥 **Telegram Communities** — engage members with games and competitions
+- 🎮 **Gaming Groups** — duels, trivia, group events
+- 🏢 **Employee Engagement** — team building through friendly competition
+- 📚 **Educational Groups** — quiz mode for learning and testing knowledge
+- 🎉 **Event Bots** — competitions during streams, webinars, meetups
+
 ## ✨ Features
 
 ### 🎯 Gameplay
@@ -38,7 +47,7 @@ A feature-rich Telegram group game bot with XP system, levels, trivia, duels, sh
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/nullbit26/tg-game-bot.git
+git clone https://github.com/yourusername/tg-game-bot.git
 cd tg-game-bot
 npm install
 ```
